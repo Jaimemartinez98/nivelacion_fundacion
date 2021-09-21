@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Empresas;
+use App\Models\Pruebas;
 
 class EmpresasController extends Controller
 {
     public function index(){
         //Traera una colección de datos ordenada
+
+        $pruebas = Pruebas::get();
+
+        dd($pruebas);
+
+
+
+        return view('empresas.index');
     }
 
     public function create(){
         //Muestra un formulario donde luego se almacenaran datos
+        return view('empresas.crear_empresa');
     }
 
     public function store(){
